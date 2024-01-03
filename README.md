@@ -10,6 +10,35 @@
 - [ ] 파일관리
   - [ ] 파일저장
   - [ ] 파일에서 데이터 읽어오기
+
+    ````
+    파일명 / 파일저장할 위치 
+    String path = Paths.get(".").toAbsolutePath().toString();
+    String filename = path + "/data.txt";
+    
+    파일저장
+    PrintWrite printWriter = new PrintWriter(new FileWriter(filename));
+    printWriter.write("이름/국어/영어/수학");
+    printWriter.close();
+    
+    파일에서 데이터 읽어오기
+    File file = new File(filePath); // File객체 생성 
+    if(file.exists()){ 
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        System.out.println("파일내용 출력------------------"); 
+        String line = null; 
+        while ((line = reader.readLine()) != null){ 
+            System.out.println(line);
+        } 
+        System.out.println("------------------------------"); 	
+        reader.close(); 
+    }
+    
+    파일에서 읽어오는 함수는 프로그램이 시작되면 바로 실행되고 ArrayList객체로 가져와야 하고, 자유롭게 데이터를 다루다가 저장을 선택하면 모든 데이터가 새롭게 파일에 저장.
+    데이터 저장포맷은 json을 사용해도 되고, 포맷을 정하여 사용해도 됨.
+
+    ````
+
 - [ ] 조회 (상품 조회)
   - [x] 등록된 상품 들을 모두 출력 한다
   - [x] 각 제품별 줄바꿈 처리를 한다
