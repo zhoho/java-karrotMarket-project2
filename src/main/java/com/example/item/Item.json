@@ -1,0 +1,37 @@
+[
+    {
+        "seller": "Jiho",
+        "dateTime": "1월 3일 14시 42분",
+        "itemName": "airpods",
+        "price": 50000,
+        "id": 1
+    },
+    {
+        "seller": "Michael Jordan",
+        "dateTime": "1월 1일 10시 00분",
+        "itemName": "jordan 1",
+        "price": 100000,
+        "id": 2
+    },
+    {
+        "seller": "Elon Musk",
+        "dateTime": "1월 1일 11시 11분",
+        "itemName": "Tesla Model X",
+        "price": 80000000,
+        "id": 3
+    },
+    {
+        "seller": "이재용",
+        "dateTime": "8월 27일 5시 20분",
+        "itemName": "삼성 갤럭시 S23",
+        "price": 550000,
+        "id": 4
+    },
+    {
+        "seller": "팀 페리스",
+        "dateTime": "1월 3일 21시 26분",
+        "itemName": "타이탄의 도구들",
+        "price": 10000,
+        "id": 4
+    }
+]
