@@ -1,33 +1,34 @@
 package com.example.file;
 
+import com.example.item.Item;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import static com.example.item.Item.items;
+import static com.example.file.FileSet.filename;
 
 public class FileLoad {
-    public static void loadDate() {
-        File file = new File("filePath");
-        if(file.exists()) {
-            BufferedReader reader = null;
-            try {
-                reader = new BufferedReader(new FileReader(file));
-            } catch (FileNotFoundException e) {
-                throw new RuntimeException(e);
+    public static void loadItemsFromFile() {
+        try {
+            String itemContents = new String(Files.readAllBytes(Paths.get(filename)));
+            JSONArray jsonArray = new JSONArray(itemContents);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                int id = jsonObject.getInt("id");
+                String seller = jsonObject.getString("seller");
+                String itemName = jsonObject.getString("itemName");
+                int price = jsonObject.getInt("price");
+                String dateTime = jsonObject.getString("dateTime");
+
+                items.add(new Item(id, seller, itemName, price, dateTime));
             }
-            System.out.println("파일 내용 출력");
-            String line = null;
-            while(true) {
-                try {
-                    if ((line = reader.readLine()) == null) break;
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                System.out.println(line);
-            }
-            System.out.println("-----------------");
-            try {
-                reader.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
