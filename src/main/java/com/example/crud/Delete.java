@@ -1,7 +1,7 @@
 package com.example.crud;
 
 import com.example.constant.Constant;
-import com.example.Item;
+import com.example.item.Item;
 import com.example.view.InputView;
 
 public class Delete {

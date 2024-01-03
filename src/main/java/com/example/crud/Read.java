@@ -1,6 +1,6 @@
 package com.example.crud;
 
-import com.example.Item;
+import com.example.item.Item;
 import com.example.view.OutputView;
 
 public class Read {

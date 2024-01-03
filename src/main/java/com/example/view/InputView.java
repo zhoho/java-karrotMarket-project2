@@ -4,15 +4,14 @@ import com.example.constant.Constant;
 import com.example.constant.ErrorMessage;
 import com.example.crud.Create;
 import com.example.crud.Delete;
-import com.example.Item;
+import com.example.item.Item;
 import com.example.crud.Read;
 import com.example.crud.Update;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InputView {
-    public static final String PRINTMENU = "[1]상품 전체 보기\n[2]상품 추가\n[3]상품 수정\n[4]상품 등록 취소\n[5]상품 이름 검색\n[0]종료";
+    public static final String PRINTMENU = "[1]상품 전체 보기\n[2]상품 추가\n[3]상품 수정\n[4]상품 등록 취소\n[5]상품 이름 검색\n[6]저장 하기\n[0]종료";
     public static final String PRINTADDITEMINFO = "[상품 추가]";
     public static final String PRINTEDITITEMINFO = "[상품 수정]";
     public static final String INPUTSELLER = "판매자:";

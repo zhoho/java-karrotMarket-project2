@@ -15,6 +15,7 @@ import java.io.File;
 public class KarrotMarketController {
     public KarrotMarketController() {
         OutputView.printStartMessage();
+        FileSet.setFileDir();
     }
 
     public void karrotFlow() {
@@ -44,8 +45,8 @@ public class KarrotMarketController {
             else if(selectedMenu == Constant.FIVE) {
                 Read.searchItems(InputView.getItemName());
             }
-            else if(selectedMenu == 9) {
-                FileSet.setFileDir();
+            else if(selectedMenu == Constant.SIX) {
+                FileSave.saveItemToFile();
             }
             else {
                 throw new IllegalArgumentException("[ERROR] 잘못된 입력");

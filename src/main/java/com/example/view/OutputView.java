@@ -1,7 +1,7 @@
 package com.example.view;
 
 import com.example.constant.Constant;
-import com.example.Item;
+import com.example.item.Item;
 import com.example.constant.ErrorMessage;
 
 public class OutputView {
