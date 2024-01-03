@@ -1,17 +1,18 @@
-## 주제 : 당근마켓 CRUD 기능 구현
+## 주제 : 당근마켓 CRUD 기능 구현 + File I/O
 
 #### 조건
-- [ ] ArrayList, Scanner, BufferedReader, DateTimeFormatter class 사용
+- [x] ArrayList, Scanner, BufferedReader, DateTimeFormatter class 사용
 - [x] 조회할 때 데이터 처음 번호는 1번 부터
 - [x] 수정, 삭제시 조회 메뉴의 리스트를 보여준 후 원하는 번호를 입력받은 후 번호에 해당하는 데이터를 수정이나 삭제 기능 구현
 
 
 #### 주요 기능
-- [ ] 파일관리
-  - [ ] 파일저장
-  - [ ] 파일에서 데이터 읽어오기
+- [x] 파일관리
+  - [x] 파일저장
+  - [x] 파일에서 데이터 읽어오기
 
     ````
+    예시)
     파일명 / 파일저장할 위치 
     String path = Paths.get(".").toAbsolutePath().toString();
     String filename = path + "/data.txt";
@@ -73,7 +74,7 @@
 - [ ] db 연결
   - [ ] id index 로직 수정
   - [ ] 등록 일자, 가격 순 정렬
-- [ ] File IO
+- [x] File IO
 
 ---
 
@@ -91,19 +92,28 @@
 - view
   - InputView : 사용자 입력과 예외 처리
   - OutputView : 화면에 보여지는 출력을 담당
-- item : 상품 데이터 관리
+- item
+  - Item : 상품 데이터 관리
+  - Item.json : 상품 데이터 포멧
 - Main : 프로그램 시작과 controller와의 연결 다리 역할
 
-### 실행 화면
-<img src="image/karrot1.png">
-<img src="image/karrot2.png" width="200" height="180">
-<img src="image/karrot3.png">
-<img src="image/karrot4.png">
+### Libraries
+
+- import org.json.JSONArray;
+- import org.json.JSONObject;
+- import java.io.FileWriter;
+- import java.io.IOException;
+- import java.nio.file.Files;
+- import java.nio.file.Paths;
+
+### 실행 화면, 데이터 포멧
+
+<img src="image/karrot2_2.jpeg">
+
+<img src="image/karrot2_1.jpeg">
+
 
 ### 느낀점
-- 기능별로 메서드를 나누고 한 메서드는 한가지 기능만 구현할 수 있도록 분리하다 보니 구현에 꽤 오랜 시간이 소요 되었습니다.
-- 입력값에 대한 예외 처리를 했는데 어느 정도까지 예외처리를 하는게 적절한지 고민이 되었습니다.
-- MVC 패턴의 개념을 적용하려고 노력 했는데 아직 정확히 이해 하지 못하고 구현한 것 같습니다.
-- 모든 문자열과 숫자를 상수로 처리 했는데 이렇게 모두 처리하는것이 좋은것인지에 대한 고민을 했습니다.
-- 변수와 메서드명을 보면 딱 어떤 기능을 하는 것인지 알 수 있도록 고민했는데 여전히 비슷하거나 적절하지 못한 네이밍이 있었던 것 같습니다.
-- 프로그램의 확장성을 생각하면서 구현하려고 노력했지만 잘 안된것같습니다.
+- 이번 과제2는 과제 1에서 기존에 작성 했던 코드에 파일 입출력 기능을 추가하는 과제였습니다. 과제 1때 최대한 기능을 분리 하려고 해서 이번에
+기능을 추가하는데 있어서 큰 어려움이 없었습니다. txt 파일 입출력은 해본적이 있었고 Json형식으로 파일 입출력은 처음 해보았는데, 처음엔 헷갈리기도
+했지만 익숙해 지니 오히려 정리가 잘 되고 이후 데이터 관리할때 더욱 용이 하겠다는 생각을 했습니다.
