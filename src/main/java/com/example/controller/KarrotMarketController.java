@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.constant.Constant;
+import com.example.constant.ErrorMessage;
 import com.example.crud.Create;
 import com.example.crud.Delete;
 import com.example.crud.Read;
@@ -9,8 +10,6 @@ import com.example.file.FileSave;
 import com.example.file.FileSet;
 import com.example.view.InputView;
 import com.example.view.OutputView;
-
-import java.io.File;
 
 public class KarrotMarketController {
     public KarrotMarketController() {
@@ -49,7 +48,7 @@ public class KarrotMarketController {
                 FileSave.saveItemToFile();
             }
             else {
-                throw new IllegalArgumentException("[ERROR] 잘못된 입력");
+                throw new IllegalArgumentException(ErrorMessage.INVALID_MENU_SELECT_ROUTER.getMessage());
             }
     }
 }
